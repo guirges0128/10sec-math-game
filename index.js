@@ -84,9 +84,10 @@ var randomNumberGenerator = function(size) {
 var questionGenerator = function() {
     //create a new object
     var question = {};
-    //insert generator fuction inside two variables
+    //insert generator fuction inside two variables and use slider value to determine size
     var number1 = randomNumberGenerator(slider.val());
     var number2 = randomNumberGenerator(slider.val());
+
     var smallestNumber;
 
     while(number1 === number2) {
@@ -101,7 +102,7 @@ var questionGenerator = function() {
 
     var number3 = number1 * number2;
 
-    //insert new objects within question object
+    //implement different answers and equations
     selectOperator();
     if (operators === '+') {
         question.answer = number1 + number2;
@@ -119,9 +120,6 @@ var questionGenerator = function() {
         question.answer = number3 / number1;
         question.equation = String(number3) + operators + String(number1);
     }
-    console.log(number1);
-    console.log(number2);
-    console.log(number3);
         return question;
 }
 
@@ -135,16 +133,19 @@ var questionGenerator = function() {
     //check to see if users input is correct answer
     var checkAnswer = function(userInput, answer) {
         if (userInput === answer) {
+            //if correct display new question
             renderNewQuestion();
+            //remove the users input value after correct answer
             $('#user-input').val('');
+            //add 1 sec if answer is correct
             updateTimeLeft(+1);
+            //add 1 point for every correct answer
             updateScore(+1);
         }
     }
-
+    //switch to different operator when user clicks checkbox
    $('.maths').on('click', function() {
         selectOperator();
-        console.log('clicked');
    })
 
     // start game and check answer on keyup from user

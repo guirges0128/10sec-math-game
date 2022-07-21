@@ -1,3 +1,58 @@
+body {
+background-image: url(./images/dan-cristian-padure-h3kuhYUCE9A-unsplash\ \(1\).jpg);
+background-position: right;
+}
+
 h2 {
-    color:aqua;
+    font-style: italic;
+    background:linear-gradient(to left, #0037ff 30%, #0084ff 10%, #000095ba 20%, #222 75%);
+    border-radius: 4px;
+    color: #fff;
+    box-shadow: 1px 2px 2px 3px #000;
+}
+
+.container {
+    height: 90rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.maths {
+    width: 50px;
+    height: 20px;
+}
+
+.timer {
+    font-size: 20px;
+}
+
+#score {
+    font-size: 25px;
+}
+
+#hero {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px 2px #0037ff;
+}
+
+h4 {
+    text-align: center;
+}
+
+#time-left {
+    text-align: center;
+}
+.timer {
+    text-align: center;
+}
+
+#equation {
+    text-align: center;
+}
+
+#user-input {
+    margin-left: 40px;
 }
