@@ -18,22 +18,24 @@
       <div class="row">
         <div class="col-xs-12" id="hero">
           <h2>10 Sec Math Game</h2>
-          <input type="checkbox" class="maths" id="add" value="true" />
-          <label for="add">+</label>
+          <h4>Select Operator</h4>
+          <input type="checkbox" class="maths" id="add" value="true" checked />
+          <label id="icons" for="add">+</label>
           <input type="checkbox" class="maths" id="subtract" value="false" />
-          <label for="subtract">-</label>
+          <label id="icons" for="subtract">-</label>
           <input type="checkbox" class="maths" id="multiply" value="false" />
-          <label for="multiply">x</label>
+          <label id="icons" for="multiply">*</label>
           <input type="checkbox" class="maths" id="divide" value="false" />
-          <label for="divide">/</label>
+          <label id="icons" for="divide">/</label>
           <h5 id="number-text"></h5>
           <input type="range" id="limit" min="10" max="50" step="5" />
-          <label for="limit">Number Range</label>
+          <label for="limit">Level of Difficulty</label>
           <h3 id="time-left"></h3>
           <p class="timer">seconds left:</p>
           <h1 id="equation"></h1>
           <input id="user-input" type="number" />
           <h4>Score: <span id="score"></span></h4>
+          <h4>High Score: <span id="high-score"></span></h4>
         </div>
       </div>
     </div>

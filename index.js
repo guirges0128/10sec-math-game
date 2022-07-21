@@ -10,6 +10,7 @@ var subtract = document.getElementById('subtract');
 var multiply = document.getElementById('multiply');
 var divide = document.getElementById('divide');
 var operators;
+var highScore = 0;
 var slider = $('#limit');
 var sliderDisplay = $('#number-text');
 sliderDisplay.html(slider.val());
@@ -30,11 +31,21 @@ var updateTimeLeft = function(amount) {
     $('#score').text(score);
   }
 
+  var highestScore = function(amount) {
+    var scoreBoard = score - highScore;
+    if (scoreBoard > 0) {
+      highScore = score;
+    }
+    $('#high-score').text(highScore);
+    console.log(highScore);
+  }
+
 //set interval that counts down a timer of 10 sec and starts game
 var startGame = function () {
     if (!interval) {
         if (timeLeft === 0) {
             updateTimeLeft(10);
+            highestScore();
             updateScore(-score);
         }
       interval = setInterval(function () {
@@ -146,6 +157,26 @@ var questionGenerator = function() {
     //switch to different operator when user clicks checkbox
    $('.maths').on('click', function() {
         selectOperator();
+   })
+
+   $('#add').on('click', function() {
+      operators = '+';
+      renderNewQuestion();
+   })
+
+   $('#subtract').on('click', function() {
+      operators ='-';
+      renderNewQuestion();
+   })
+
+   $('#multiply').on('click', function() {
+      operators ='*';
+      renderNewQuestion();
+   })
+
+   $('#divide').on('click', function() {
+      operators ='/';
+      renderNewQuestion();
    })
 
     // start game and check answer on keyup from user
